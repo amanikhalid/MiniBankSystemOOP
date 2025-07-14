@@ -63,6 +63,12 @@ namespace MiniBankSystemOOP
             Balance -= amount;
         }
 
+        public void LockAccount() // method to lock the account
+        {
+            IsLocked = true;
+            Console.WriteLine("Account has been locked.");
+        }
+
 
 
 
