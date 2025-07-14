@@ -36,6 +36,16 @@ namespace MiniBankSystemOOP
         public bool CheckPassword(string hashedInput) // compares the hashed input with the stored hashed password
         {
             return hashedInput == HashedPassword;
+
+        }
+
+        public void Deposit(double amount) // method to deposit money into the account
+        {
+            if (amount <= 0)
+            {
+                Console.WriteLine("Deposit amount must be positive.");
+            }
+            Balance += amount;
         }
 
 
