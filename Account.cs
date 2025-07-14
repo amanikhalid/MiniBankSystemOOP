@@ -69,6 +69,13 @@ namespace MiniBankSystemOOP
             Console.WriteLine("Account has been locked.");
         }
 
+        public void UnlockAccount() // method to unlock the account
+        {
+            IsLocked = false;
+            Console.WriteLine("Account has been unlocked.");
+        }
+
+
 
 
 
