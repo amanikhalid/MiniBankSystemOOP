@@ -48,6 +48,21 @@ namespace MiniBankSystemOOP
             Balance += amount;
         }
 
+        public void Withdraw(double amount) // method to withdraw money from the account
+        {
+            if (amount <= 0)
+            {
+                Console.WriteLine("Withdrawal amount must be positive.");
+                return;
+            }
+            if (amount > Balance)
+            {
+                Console.WriteLine("Insufficient funds for withdrawal.");
+                return;
+            }
+            Balance -= amount;
+        }
+
 
 
 
