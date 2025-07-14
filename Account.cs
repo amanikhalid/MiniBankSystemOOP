@@ -32,6 +32,13 @@ namespace MiniBankSystemOOP
             IsLocked = false; // indicates if the account is locked
         }
 
+        
+        public bool CheckPassword(string hashedInput) // compares the hashed input with the stored hashed password
+        {
+            return hashedInput == HashedPassword;
+        }
+
+
 
 
     }
