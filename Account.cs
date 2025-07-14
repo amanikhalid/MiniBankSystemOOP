@@ -19,17 +19,17 @@ namespace MiniBankSystemOOP
 
         private string HashedPassword;
 
-        public Account(int number, string name, string nid, double balance, string userType, string passwordHash, string phone, string address)
+        public Account(int number, string name, string nid, double balance, string userType, string passwordHash, string phone, string address) 
         {
-            AccountNumber = number;
-            Name = name;
-            NationalId = nid;
-            Balance = balance;
-            UserType = userType;
-            HashedPassword = passwordHash;
-            Phone = phone;
-            Address = address;
-            IsLocked = false;
+            AccountNumber = number; // unique identifier for the account
+            Name = name; // account holder's name
+            NationalId = nid; // account holder's national ID
+            Balance = balance; // initial balance of the account
+            UserType = userType; // type of user (e.g., customer, admin)
+            HashedPassword = passwordHash; // hashed password for security
+            Phone = phone; // account holder's phone number
+            Address = address; // account holder's address
+            IsLocked = false; // indicates if the account is locked
         }
 
 
