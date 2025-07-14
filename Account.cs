@@ -74,9 +74,17 @@ namespace MiniBankSystemOOP
             IsLocked = false;
             Console.WriteLine("Account has been unlocked.");
         }
-
-
-
+        public void DisplayAccountInfo() // method to display account information
+        {
+            Console.WriteLine($"Account Number: {AccountNumber}");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"National ID: {NationalId}");
+            Console.WriteLine($"Balance: {Balance:C}");
+            Console.WriteLine($"User Type: {UserType}");
+            Console.WriteLine($"Phone: {Phone}");
+            Console.WriteLine($"Address: {Address}");
+            Console.WriteLine($"Account Locked: {IsLocked}");
+        }
 
 
     }
