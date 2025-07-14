@@ -16,7 +16,23 @@ namespace MiniBankSystemOOP
         public bool IsLocked { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+
         private string HashedPassword;
+
+        public Account(int number, string name, string nid, double balance, string userType, string passwordHash, string phone, string address)
+        {
+            AccountNumber = number;
+            Name = name;
+            NationalId = nid;
+            Balance = balance;
+            UserType = userType;
+            HashedPassword = passwordHash;
+            Phone = phone;
+            Address = address;
+            IsLocked = false;
+        }
+
+
 
     }
 }
