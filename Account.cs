@@ -52,19 +52,15 @@ namespace MiniBankSystemOOP
             Transactions.Add(new Transaction("Deposit", amount, Balance));
         }
 
-        public void Withdraw(double amount) // method to withdraw money from the account
+        public bool Withdraw(double amount)
         {
-            if (amount <= 0)
+            if (Balance >= amount)
             {
-                Console.WriteLine("Withdrawal amount must be positive.");
-                return;
+                Balance -= amount;
+                Transactions.Add(new Transaction("Withdraw", amount, Balance));
+                return true;
             }
-            if (amount > Balance)
-            {
-                Console.WriteLine("Insufficient funds for withdrawal.");
-                return;
-            }
-            Balance -= amount;
+            return false;
         }
 
         public void LockAccount() // method to lock the account
