@@ -66,6 +66,31 @@
             Console.WriteLine($"Account created successfully! Account Number: {accountNumber}");
         }
 
+        static Account Login()
+        {
+            Console.Clear();
+            Console.WriteLine("Login");
+            Console.Write("Account Number: ");
+            int accountNumber = int.Parse(Console.ReadLine());
+            if (accounts.TryGetValue(accountNumber, out Account account))
+            {
+                Console.Write("Password: ");
+                string password = Console.ReadLine();
+                if (account.CheckPassword(HashPassword(password)))
+                {
+                    return account; // Return the logged-in account
+                }
+                else
+                {
+                    Console.WriteLine("Invalid password.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Account not found.");
+            }
+            return null; // Return null if login fails
+        }
     }
 }
 
