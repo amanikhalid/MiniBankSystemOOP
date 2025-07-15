@@ -12,7 +12,7 @@ namespace MiniBankSystemOOP
         public string Name { get; }
         public double Balance { get; private set; }
         public string Password { get; }
-        public List<string> Transactions { get; }
+        public List<Transaction> Transactions { get; }
         public int AccountNumber { get; private set; }
         
         public string NationalId { get; private set; }
