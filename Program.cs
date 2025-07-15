@@ -109,6 +109,20 @@
             }
         }
 
+        static void Withdraw()
+        {
+            Account acc = Login();
+            if (acc == null) return;
+            Console.Write("Enter amount to withdraw: ");
+            if (double.TryParse(Console.ReadLine(), out double amount) && amount > 0)
+            {
+                acc.Withdraw(amount);
+                Console.WriteLine("Withdrawn " + amount + " successfully.");
+            }
+            else
+                Console.WriteLine("Invalid amount.");
+        }
+
     }
 }
 
