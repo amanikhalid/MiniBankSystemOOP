@@ -19,6 +19,7 @@
                     Console.WriteLine("3. Withdraw");
                     Console.WriteLine("4. View Balance");
                     Console.WriteLine("5. Transaction History");
+                    Console.WriteLine("6. Submit Review");
                     Console.WriteLine("0. Exit");
 
                     Console.Write("Choose an option: ");
@@ -30,6 +31,10 @@
                         case "3": Withdraw(); break;
                         case "4": ViewBalance(); break;
                         case "5": ViewTransactionHistory(); break;
+                        case "6":
+                            var acc = Login();
+                            if (acc != null) ReviewManager.SubmitReview(acc.Number);
+                            break;
                         case "0": SaveAccounts(); return;
                         default: Console.WriteLine("Invalid option."); break;
                     }
