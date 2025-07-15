@@ -7,8 +7,8 @@
 
         static void Main(string[] args)
         {
-            LoadAccounts(); 
-           
+            LoadAccounts();
+
             while (true) // Main loop for the menu system
             {
                 {
@@ -22,16 +22,16 @@
                     Console.WriteLine("0. Exit");
 
                     Console.Write("Choose an option: ");
-                   
-                    switch (Console.ReadLine()) 
+
+                    switch (Console.ReadLine())
                     {
-                        case "1": CreateAccount(); break; 
+                        case "1": CreateAccount(); break;
                         case "2": Deposit(); break;
                         case "3": Withdraw(); break;
                         case "4": ViewBalance(); break;
                         case "5": ViewTransactionHistory(); break;
                         case "0": SaveAccounts(); return;
-                        default: Console.WriteLine("Invalid option."); break; 
+                        default: Console.WriteLine("Invalid option."); break;
                     }
                     Console.WriteLine("Press any key to continue...");
                     Console.ReadKey();
@@ -90,6 +90,18 @@
                 Console.WriteLine("Account not found.");
             }
             return null; // Return null if login fails
+        }
+
+        static void Deposit()
+        {
+            Account account = Login();
+            if (account != null)
+            {
+                Console.Write("Deposit Amount: ");
+                double amount = double.Parse(Console.ReadLine());
+                account.Deposit(amount);
+                Console.WriteLine($"Deposited {amount:C} to account {account.AccountNumber}. New Balance: {account.Balance:C}");
+            }
         }
     }
 }
