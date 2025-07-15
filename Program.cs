@@ -2,14 +2,15 @@
 {
     internal class Program
     {
-        static Dictionary<int, Account> accounts = new();
-        static int lastAccountNumber = 1000;
+        static Dictionary<int, Account> accounts = new(); // stores accounts with account number as key
+        static int lastAccountNumber = 1000; // starting account number
+
         static void Main(string[] args)
         {
-            bool runAgain = true;
-            while (runAgain)
+            LoadAccounts(); 
+           
+            while (true) // Main loop for the menu system
             {
-                //handle the exception if the user enter invalid input
                 {
                     Console.Clear();
                     Console.WriteLine("Mini Bank System");
@@ -21,16 +22,16 @@
                     Console.WriteLine("0. Exit");
 
                     Console.Write("Choose an option: ");
-                    string choice = Console.ReadLine();
-                    switch (choice)
+                   
+                    switch (Console.ReadLine()) 
                     {
-                        case "1": //CreateAccount(); break;
-                        case "2": //Deposit(); break;
-                        case "3": //Withdraw(); break;
-                        case "4": //ViewBalance(); break;
-                        case "5": //ViewTransactionHistory(); break;
-                        case "0": return;
-                        default: Console.WriteLine("Invalid option."); break;
+                        case "1": CreateAccount(); break; 
+                        case "2": Deposit(); break;
+                        case "3": Withdraw(); break;
+                        case "4": ViewBalance(); break;
+                        case "5": ViewTransactionHistory(); break;
+                        case "0": SaveAccounts(); return;
+                        default: Console.WriteLine("Invalid option."); break; 
                     }
                     Console.WriteLine("Press any key to continue...");
                     Console.ReadKey();
@@ -39,16 +40,7 @@
             }
 
         }
-        
-        static void CreateAccount()
-        {
-            Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
-            int accNum = ++lastAccountNumber;
-            accounts[accNum] = new Account(accNum, name);
-            Console.WriteLine($"Account created. Your account number is: {accNum}");
-        }
-
+      
     }
 }
 
