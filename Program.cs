@@ -94,15 +94,21 @@
 
         static void Deposit()
         {
-            Account account = Login();
-            if (account != null)
             {
-                Console.Write("Deposit Amount: ");
-                double amount = double.Parse(Console.ReadLine());
-                account.Deposit(amount);
-                Console.WriteLine($"Deposited {amount:C} to account {account.AccountNumber}. New Balance: {account.Balance:C}");
+                Account acc = Login();
+                if (acc == null) return;
+
+                Console.Write("Enter amount to deposit: ");
+                if (double.TryParse(Console.ReadLine(), out double amount) && amount > 0)
+                {
+                    acc.Deposit(amount);
+                    Console.WriteLine("Deposited" + amount + "successfully."); 
+                }
+                else
+                    Console.WriteLine("Invalid amount.");
             }
         }
+
     }
 }
 
