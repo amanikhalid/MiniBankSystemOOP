@@ -61,7 +61,7 @@
             Console.Write("Address: ");
             string address = Console.ReadLine();
             int accountNumber = lastAccountNumber++;
-            Account newAccount = new(accountNumber, name, nationalId, balance, userType, hashedPassword, phone, address);
+            Account newAccount = new(accountNumber, name, balance, hashedPassword);
             accounts[accountNumber] = newAccount;
             Console.WriteLine($"Account created successfully! Account Number: {accountNumber}");
         }
