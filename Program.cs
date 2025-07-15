@@ -10,12 +10,15 @@
                 try //handle the exception if the user enter invalid input
                 {
                     Console.Clear();
-                    Console.WriteLine("Welcome to Mini Bank System!");
-                    Console.WriteLine("1. create New account");
-                    Console.WriteLine("2. Login");
+                    Console.WriteLine("Mini Bank System");
+                    Console.WriteLine("1. Create Account");
+                    Console.WriteLine("2. Deposit");
+                    Console.WriteLine("3. Withdraw");
+                    Console.WriteLine("4. View Balance");
+                    Console.WriteLine("5. Transaction History");
                     Console.WriteLine("0. Exit");
 
-                    Console.WriteLine("Select Option ");
+                    Console.Write("Choose an option: ");
                     string choice = Console.ReadLine();
                     switch (choice)
                     {
