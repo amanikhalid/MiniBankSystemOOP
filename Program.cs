@@ -130,6 +130,18 @@
             Console.WriteLine("Current Balance:" + acc.Balance);
         }
 
+        static void ViewTransactionHistory()
+        {
+            Account acc = Login();
+            if (acc == null) return;
+            Console.WriteLine("Transaction History for Account Number: " + acc.AccountNumber);
+            foreach (var transaction in acc.Transactions)
+            {
+                Console.WriteLine(transaction);
+            }
+        }
+
+
     }
 }
 
