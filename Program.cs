@@ -40,7 +40,32 @@
             }
 
         }
-      
+
+        static void CreateAccount()
+        {
+            Console.Clear();
+            Console.WriteLine("Create Account");
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+            Console.Write("National ID: ");
+            string nationalId = Console.ReadLine();
+            Console.Write("Initial Balance: ");
+            double balance = double.Parse(Console.ReadLine());
+            Console.Write("User Type (customer/admin): ");
+            string userType = Console.ReadLine();
+            Console.Write("Password: ");
+            string password = Console.ReadLine();
+            string hashedPassword = HashPassword(password); // Hash the password
+            Console.Write("Phone: ");
+            string phone = Console.ReadLine();
+            Console.Write("Address: ");
+            string address = Console.ReadLine();
+            int accountNumber = lastAccountNumber++;
+            Account newAccount = new(accountNumber, name, nationalId, balance, userType, hashedPassword, phone, address);
+            accounts[accountNumber] = newAccount;
+            Console.WriteLine($"Account created successfully! Account Number: {accountNumber}");
+        }
+
     }
 }
 
