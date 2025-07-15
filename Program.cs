@@ -1,6 +1,6 @@
 ﻿namespace MiniBankSystemOOP
 {
-    internal class Program
+    public class Program
     {
         static Dictionary<int, Account> accounts = new(); // stores accounts with account number as key
         static int lastAccountNumber = 1000; // starting account number
