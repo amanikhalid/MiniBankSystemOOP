@@ -22,27 +22,19 @@
                     string choice = Console.ReadLine();
                     switch (choice)
                     {
-                        case "1":
-                            //CreateNewAccount();
-                            break;
-                        case "2":
-                            //Login();
-                            break;
-                        case "0":
-                            Console.WriteLine("Exiting system...");
-                            Console.WriteLine("Thank you for using Mini Bank System!");
-                            Console.WriteLine("Press any key to exit.");
-                            Console.ReadKey();
-                            runAgain = false;
-                            break;
-
-                        default:
-                            Console.WriteLine("Invalid choice, please try again.");
-                            break;
+                        case "1": //CreateAccount(); break;
+                        case "2": //Deposit(); break;
+                        case "3": //Withdraw(); break;
+                        case "4": //ViewBalance(); break;
+                        case "5": //ViewTransactionHistory(); break;
+                        case "0": return;
+                        default: Console.WriteLine("Invalid option."); break;
                     }
-
-
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
                 }
+        
+
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
