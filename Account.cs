@@ -87,5 +87,11 @@ namespace MiniBankSystemOOP
         }
 
 
+        public void UpdatePhone(string newPhone) // method to update the phone number
+        {
+            Phone = newPhone;
+            Console.WriteLine("Phone number updated successfully.");
+        }
+
     }
 }

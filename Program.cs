@@ -7,7 +7,7 @@
             bool runAgain = true;
             while (runAgain)
             {
-                try //handle the exception if the user enter invalid input
+                //handle the exception if the user enter invalid input
                 {
                     Console.Clear();
                     Console.WriteLine("Mini Bank System");
@@ -32,20 +32,10 @@
                     }
                     Console.WriteLine("Press any key to continue...");
                     Console.ReadKey();
+
                 }
-        
-
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-
-
-                    Console.WriteLine("Invalid Choice! Try again.");
-                    Console.WriteLine("Press any key  ");
-                    Console.ReadLine();
-                }
-
             }
+
         }
     }
 }
