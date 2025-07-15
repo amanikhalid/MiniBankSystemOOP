@@ -22,7 +22,7 @@ namespace MiniBankSystemOOP
         public string Phone { get; set; }
         public string Address { get; set; }
 
-        string HashedPassword;
+        public string HashedPassword;
 
         public Account(int number, string name, string nid, double balance, string userType, string passwordHash, string phone, string address) 
         {
