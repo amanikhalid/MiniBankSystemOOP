@@ -24,25 +24,21 @@ namespace MiniBankSystemOOP
 
         public string HashedPassword;
 
-        public Account(int number, string name, string nid, double balance, string userType, string passwordHash, string phone, string address) 
+        public Account(int number, string name, double balance, string hashedPassword)
         {
-            AccountNumber = number; // unique identifier for the account
-            Name = name; // account holder's name
-            NationalId = nid; // account holder's national ID
-            Balance = balance; // initial balance of the account
-            UserType = userType; // type of user (e.g., customer, admin)
-            HashedPassword = passwordHash; // hashed password for security
-            Phone = phone; // account holder's phone number
-            Address = address; // account holder's address
-            IsLocked = false; // indicates if the account is locked
-            Number = number;
+            AccountNumber = number;
             Name = name;
-            Password = Password;
-            Balance = 0;
-            Transactions = new List<string> { $"Account created for {name}." };
+            Balance = balance;
+            HashedPassword = hashedPassword;
+            NationalId = "";
+            UserType = "customer";
+            Phone = "";
+            Address = "";
+            IsLocked = false;
+            Transactions = new List<string> { $"Account loaded from file for {name}." };
         }
 
-        
+
         public bool CheckPassword(string hashedInput) // compares the hashed input with the stored hashed password
         {
             return hashedInput == HashedPassword;
