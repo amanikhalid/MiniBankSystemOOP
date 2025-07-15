@@ -8,16 +8,21 @@ namespace MiniBankSystemOOP
 {
     class Account
     {
-        public int AccountNumber { get; private set; }
-        public string Name { get; private set; }
-        public string NationalId { get; private set; }
+        public int Number { get; }
+        public string Name { get; }
         public double Balance { get; private set; }
+        public string Password { get; }
+        public List<string> Transactions { get; }
+        public int AccountNumber { get; private set; }
+        
+        public string NationalId { get; private set; }
+        
         public string UserType { get; set; }
         public bool IsLocked { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
 
-        private string HashedPassword;
+        string HashedPassword;
 
         public Account(int number, string name, string nid, double balance, string userType, string passwordHash, string phone, string address) 
         {
@@ -30,6 +35,11 @@ namespace MiniBankSystemOOP
             Phone = phone; // account holder's phone number
             Address = address; // account holder's address
             IsLocked = false; // indicates if the account is locked
+            Number = number;
+            Name = name;
+            Password = Password;
+            Balance = 0;
+            Transactions = new List<string> { $"Account created for {name}." };
         }
 
         
