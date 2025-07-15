@@ -143,19 +143,18 @@
 
         static void LoadAccounts()
         {
-            if (!File.Exists("accounts.txt")) return;
+            if (!File.Exists(AccountsFilePath)) return;
 
-            string[] lines = File.ReadAllLines("accounts.txt");
+            string[] lines = File.ReadAllLines(AccountsFilePath);
             foreach (string line in lines)
             {
                 var parts = line.Split(',');
                 int accNum = int.Parse(parts[0]);
                 string name = parts[1];
                 double balance = double.Parse(parts[2]);
-                string password = parts[3];
+                string hashedPassword = parts[3];
 
-                var acc = new Account(accNum, name, password);
-                acc.Deposit(balance);
+                var acc = new Account(accNum, name, balance, hashedPassword);
                 accounts[accNum] = acc;
 
                 if (accNum > lastAccountNumber) lastAccountNumber = accNum;
