@@ -4,7 +4,7 @@
     {
         static Dictionary<int, Account> accounts = new(); // stores accounts with account number as key
         static int lastAccountNumber = 1000; // starting account number
-
+        static readonly string AccountsFilePath = @"C:\Users\CodeLine\source\repos\MiniBankSystemOOP\Accounts.txt"; // File path for storing accounts
         static void Main(string[] args)
         {
             LoadAccounts();
