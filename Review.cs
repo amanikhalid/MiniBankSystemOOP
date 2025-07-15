@@ -24,6 +24,33 @@ namespace MiniBankSystemOOP
             return $"[{Timestamp:yyyy-MM-dd HH:mm}] Account {AccountNumber}: {Comment}";
         }
     }
+
+    public static class ReviewManager
+    {
+        private static readonly string FilePath = "reviews.txt";
+
+        public static void SubmitReview(int accNum)
+        {
+            Console.Write("Write your review: ");
+            string comment = Console.ReadLine();
+
+            Review review = new(accNum, comment);
+            File.AppendAllText(FilePath, review + Environment.NewLine);
+
+            Console.WriteLine("Review submitted successfully.");
+        }
+
+
+
+
+
+
+
+
+
+
+    }
 }
+
     
 
