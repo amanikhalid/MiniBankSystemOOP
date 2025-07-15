@@ -93,5 +93,11 @@ namespace MiniBankSystemOOP
             Console.WriteLine("Phone number updated successfully.");
         }
 
+        public void UpdateAddress(string newAddress) // method to update the address
+        {
+            Address = newAddress;
+            Console.WriteLine("Address updated successfully.");
+        }
+
     }
 }
