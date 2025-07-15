@@ -46,13 +46,10 @@ namespace MiniBankSystemOOP
 
         }
 
-        public void Deposit(double amount) // method to deposit money into the account
+        public void Deposit(double amount) 
         {
-            if (amount <= 0)
-            {
-                Console.WriteLine("Deposit amount must be positive.");
-            }
             Balance += amount;
+            Transactions.Add(new Transaction("Deposit", amount, Balance));
         }
 
         public void Withdraw(double amount) // method to withdraw money from the account
