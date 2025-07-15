@@ -162,6 +162,18 @@
             }
         }
 
+        static void SaveAccounts()
+        {
+            using (StreamWriter writer = new StreamWriter("accounts.txt"))
+            {
+                foreach (var account in accounts.Values)
+                {
+                    writer.WriteLine($"{account.AccountNumber},{account.Name},{account.Balance},{account.HashedPassword}");
+                }
+            }
+            Console.WriteLine("Accounts saved successfully.");
+        }
+
 
     }
 }
