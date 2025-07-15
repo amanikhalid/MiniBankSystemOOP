@@ -2,6 +2,8 @@
 {
     internal class Program
     {
+        static Dictionary<int, Account> accounts = new();
+        static int lastAccountNumber = 1000;
         static void Main(string[] args)
         {
             bool runAgain = true;
@@ -37,6 +39,16 @@
             }
 
         }
+        
+        static void CreateAccount()
+        {
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            int accNum = ++lastAccountNumber;
+            accounts[accNum] = new Account(accNum, name);
+            Console.WriteLine($"Account created. Your account number is: {accNum}");
+        }
+
     }
 }
 
