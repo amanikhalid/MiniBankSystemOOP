@@ -174,6 +174,13 @@
             Console.WriteLine("Accounts saved successfully.");
         }
 
+        static string HashPassword(string password)
+        {
+            // Simple hash function for demonstration purposes
+            // In a real application, use a secure hashing algorithm like SHA256 or bcrypt
+            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password));
+        }
+
 
     }
 }
