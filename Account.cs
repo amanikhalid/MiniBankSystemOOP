@@ -35,7 +35,8 @@ namespace MiniBankSystemOOP
             Phone = "";
             Address = "";
             IsLocked = false;
-            Transactions = new List<string> { $"Account loaded from file for {name}." };
+            Transactions = new List<Transaction>();
+
         }
 
 
