@@ -179,8 +179,17 @@
             
             return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password));
         }
+        static Random random = new Random();
 
-
+        static int GenerateUniqueAccountNumber()
+        {
+            int accountNumber;
+            do
+            {
+                accountNumber = random.Next(1000, 9999); // Generates a 4-digit number
+            } while (accounts.ContainsKey(accountNumber));
+            return accountNumber;
+        }
     }
 }
 
