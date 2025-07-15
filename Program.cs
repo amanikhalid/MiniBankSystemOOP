@@ -139,11 +139,10 @@
         {
             Account acc = Login();
             if (acc == null) return;
-            Console.WriteLine("Transaction History for Account Number: " + acc.AccountNumber);
-            foreach (var transaction in acc.Transactions)
-            {
-                Console.WriteLine(transaction);
-            }
+
+            Console.WriteLine("Transaction History:");
+            foreach (var tx in acc.Transactions)
+                Console.WriteLine(tx.ToString());
         }
 
         static void LoadAccounts()
