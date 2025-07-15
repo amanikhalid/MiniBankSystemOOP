@@ -123,6 +123,13 @@
                 Console.WriteLine("Invalid amount.");
         }
 
+        static void ViewBalance()
+        {
+            Account acc = Login();
+            if (acc == null) return;
+            Console.WriteLine("Current Balance:" + acc.Balance);
+        }
+
     }
 }
 
