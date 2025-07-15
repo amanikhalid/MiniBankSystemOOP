@@ -40,11 +40,19 @@ namespace MiniBankSystemOOP
             Console.WriteLine("Review submitted successfully.");
         }
 
+        public static void ShowAllReviews()
+        {
+            if (!File.Exists(FilePath))
+            {
+                Console.WriteLine("No reviews yet.");
+                return;
+            }
 
-
-
-
-
+            string[] reviews = File.ReadAllLines(FilePath);
+            Console.WriteLine("All Reviews:");
+            foreach (var review in reviews)
+                Console.WriteLine(review);
+        }
 
 
 
